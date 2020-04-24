@@ -52,7 +52,7 @@ def SAW_2 (n):
                 deltas_feasible.append((dx,dy)) # if not visited, add to the feasible directions (this is self-avoiding steps)
               
         if deltas_feasible:  #checks if there is at least one direction available
-            if step > 75:
+            if step > 75: # if length is more than 75, introduce early terminating choice
                 prob = np.array([(1-esp)/len(deltas_feasible),esp])
                 index = choice([*range(len(deltas_feasible)),5],1,[*np.repeat(prob,[len(deltas_feasible),1])])[0] 
                 if index == 5:
